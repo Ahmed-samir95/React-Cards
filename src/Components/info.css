@@ -39,7 +39,8 @@
 }
 
 .mainHeading h1{
-  color: blue;
+  color: #2487CE;
+  font-size: 40px;
 }
 
 .container{
@@ -53,14 +54,37 @@
   }
 }
 
+.cardsItem{
+  background-color: #f3f9fd;
+  padding: 30px;
+}
 
+.cardsItem h2{
+  color: #2487CE;
+  font-size: 40px;
+}
 
+.cardsItem p{
+  margin: 20px 0;
+}
+.cardsItem a{
+    text-decoration: none;
+    text-transform: capitalize;
+    display: block;
+    color: #fff;
+    background-color: #124265;
+    width: 140px;
+    height: 40px;
+    margin: 20px auto;
+    line-height: 40px;
+    border-radius: 10px;
+    transition: background-color .5s;
+}
 
+.cardsItem a:hover{
+  background-color: #2487CE;
 
-
-
-
-
+}
 
 
 
