@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React,{ useState } from "react";
 
 import Cards from "./cards"
 
 import "./info.css"
 
 const Info = () => {
-  const cardOne = [
+  const [cardOneState, setState] = useState([
     {
       name : "سابق و لاحق",
       desc : "يحكي المسلسل عن طفلان يحلمان أن يفوزا بلقب العالم في رياضة السيارات, الأول سابق وهو متهور ومغرور ولكنه طيب جداً وفكاهى أيضاً ولديه حماس كبير، والثاني لاحق وهو محترم ومجتهد ومتواضع",
@@ -36,17 +36,20 @@ const Info = () => {
       desc : "جواد فتى في الثاثة عشرة من عمره, اراد ان ينضم الى فريق الأعاصير الذي كان يقوده اللاعب فوزي, عندما ذهب الى اختبار الاداء ليبارز فوزي المبارزة التي ستحدد انضمامه الى الفريق ام لا.",
       link: "https://www.dimakids.com/crushgear2-1422090919-17443.html"
     },
-  ]
-
+  ])
+const deleteHandeler = (e, clickIdx) => {
+   const deleteOb = cardOneState.filter((el, idx) => idx !== clickIdx)
+   setState(deleteOb)
+};
   return(
-    <Fragment>
+    <>
       <div className="mainContainer">
         <div className="mainHeading"><h1>انمي الزمن الجميل</h1></div>
         <div className="container">
-          <Cards infocards={cardOne} />
+          <Cards infocards={cardOneState} deleteFunc={deleteHandeler}/>
         </div>
       </div>
-    </Fragment>
+    </>
   )
 }
 export default Info

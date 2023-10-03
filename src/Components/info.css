@@ -57,6 +57,7 @@
 .cardsItem{
   background-color: #f3f9fd;
   padding: 30px;
+  position: relative;
 }
 
 .cardsItem h2{
@@ -86,7 +87,12 @@
 
 }
 
-
+.cardsItem .icon{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
 
 
 
