@@ -5,6 +5,7 @@ import Cards from "./cards"
 import "./info.css"
 
 const Info = () => {
+  const [showToggle, setshowToggle] = useState(false)
   const [cardOneState, setState] = useState([
     {
       name : "سابق و لاحق",
@@ -21,18 +22,39 @@ const Info = () => {
       desc : "تبداء قصتنا مع منصور الذي يحلم بان يكون بطل العالم في لعببة بي بليد و بعد فترة من الزمن يصبح لديه اصدقاء و يكونون فريق لخوض المباريات ",
       link: "https://www.dimakids.com/beyblades-1412791266-series.html"
     },
-    
+    {
+      name : "بي بليد",
+      desc : "تبداء قصتنا مع منصور الذي يحلم بان يكون بطل العالم في لعببة بي بليد و بعد فترة من الزمن يصبح لديه اصدقاء و يكونون فريق لخوض المباريات ",
+      link: "https://www.dimakids.com/beyblades-1412791266-series.html"
+    },
+    {
+      name : "بي بليد",
+      desc : "تبداء قصتنا مع منصور الذي يحلم بان يكون بطل العالم في لعببة بي بليد و بعد فترة من الزمن يصبح لديه اصدقاء و يكونون فريق لخوض المباريات ",
+      link: "https://www.dimakids.com/beyblades-1412791266-series.html"
+    },
+    {
+      name : "بي بليد",
+      desc : "تبداء قصتنا مع منصور الذي يحلم بان يكون بطل العالم في لعببة بي بليد و بعد فترة من الزمن يصبح لديه اصدقاء و يكونون فريق لخوض المباريات ",
+      link: "https://www.dimakids.com/beyblades-1412791266-series.html"
+    },
   ])
-const deleteHandeler = (e, clickIdx) => {
-    const deleteOb = cardOneState.filter((el, idx) => idx !== clickIdx)
-    setState(deleteOb)
-};
+  const deleteHandeler = (e, clickIdx) => {
+      const deleteOb = cardOneState.filter((el, idx) => idx !== clickIdx)
+      setState(deleteOb)
+  };
+  
+  const toggleHandeler = () => {
+    setshowToggle(!showToggle)
+  }
   return(
     <>
       <div className="mainHeading"><h1>انمي الزمن الجميل</h1></div>
+      <button style={{position: "relative" ,left: "45%", cursor: "pointer", width: "140px", padding: "10px"}} onClick={toggleHandeler}>{ showToggle ? "Hide content" : "Show content"}</button>
       <div className="mainContainer">
-        <div className="container">
-          <Cards infocards={cardOneState} deleteFunc={deleteHandeler}/>
+        <div className={showToggle ? "show" : "hide"}>
+          <div className="container">
+            <Cards infocards={cardOneState} deleteFunc={deleteHandeler}/>
+          </div>
         </div>
       </div>
     </>

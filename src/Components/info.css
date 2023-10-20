@@ -54,6 +54,10 @@
   }
 }
 
+.mainContainer{
+  margin-top: 150px;
+}
+
 .cardsItem{
   background-color: #f3f9fd;
   padding: 30px;
@@ -94,8 +98,12 @@
   cursor: pointer;
 }
 
+.show{
+  display: block;
+}
 
-
-
+.hide{
+  display: none;
+}
 
 
